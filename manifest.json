@@ -1,0 +1,6 @@
+{
+    "name": "Copy With URL",
+    "description" : "Extension to augment the browser's copy / paste functionality to append the page's URL to the copied text in the clipboard.",
+    "version": "1.0",
+    "manifest_version": 2
+}
