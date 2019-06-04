@@ -1,9 +1,12 @@
 function appendURL( text , is_no_query_string ) {
     // TODO find way to get source page's URL not the generated background page
-    var page_url = document.URL 
+    var page_url = document.URL + "?abc=def,tuv=xyz"
 
-    // TODO truncate query string
-
+    // Strip off query string
+    if ( is_no_query_string ) {
+        var qs_idx = page_url.indexOf('?');
+        var page_url = page_url.substring(0, qs_idx);
+    }
     return text + "\n" + page_url;
 }
 
