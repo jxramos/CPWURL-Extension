@@ -10,6 +10,21 @@ function copyWithURL( info , is_strip_query_string ) {
     // Append URL to text selection
     var copyText = info.selectionText + "\n" + page_url;
     console.log( copyText );
+
+    // Copy text to clipboard
+    copyToClipboard( copyText ); 
+}
+
+function copyToClipboard( text ){
+    var copyPre = document.createElement('pre');
+    copyPre.contentEditable = true;
+    document.body.appendChild(copyPre);
+    copyPre.innerHTML = text;
+    copyPre.unselectable = "off";
+    copyPre.focus();
+    document.execCommand('SelectAll');
+    document.execCommand("Copy", false, null);
+    document.body.removeChild(copyPre);
 }
 
 // Copy with URL Only
