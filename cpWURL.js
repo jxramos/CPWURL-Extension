@@ -1,5 +1,5 @@
 function copyWithURL( info , is_strip_query_string ) {
-    var page_url = info.pageUrl + "?abc=def,tuv=xyz"
+    var page_url = info.pageUrl
 
     // Strip off query string
     if ( is_strip_query_string ) {
