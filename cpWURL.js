@@ -1,10 +1,13 @@
 function copyWithURL( info , is_strip_query_string ) {
     var page_url = info.pageUrl
-
+    
     // Strip off query string
     if ( is_strip_query_string ) {
         var qs_idx = page_url.indexOf('?');
-        var page_url = page_url.substring(0, qs_idx);
+
+        if ( qs_idx != -1 ){
+            var page_url = page_url.substring(0, qs_idx);
+        }
     }
 
     // Append URL to text selection
